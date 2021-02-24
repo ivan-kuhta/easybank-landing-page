@@ -11,10 +11,14 @@ body{
   margin: 0;
   padding: 0;
   font-family: 'Public Sans', sans-serif;
-  font-size: $font-med;
+  font-size: $font-sm;
   font-weight: 300;
   color: $grayishBlue;
   line-height: 1.3;
+
+  @include breakpoint-up(large) {
+    font-size: $font-med;
+  }
 
   &.noscroll {
     overflow: hidden;
@@ -26,10 +30,45 @@ a, a:visited, a:hover{
   color: inherit;
 }
 
+h1,h2,h3,h4,h4,h6 {
+  margin-top: 0;
+}
+
 // Spacing
 .container{
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  max-width: 69.375rem;
+  margin: 0 auto;
+
+  &--pall {
+    padding-top: 2.25;
+    padding-bottom: 2.25rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  &--py {
+    padding-top: 2.25;
+    padding-bottom: 2.25rem;
+  }
+
+  &--px {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  &--pt {
+    padding-top: 2.25;
+  }
+  &--pb {
+    padding-bottom: 2.25rem;
+
+  }
+  &--pl {
+    padding-left: 1.5rem;
+  }
+  &--pr {
+    padding-right: 1.5rem;
+  }
 }
 
 // Flexbox
@@ -51,12 +90,12 @@ a, a:visited, a:hover{
 
 // Buttons
 button, .button {
+  display: inline-block;
   padding: 0.875rem 2.1875rem;
   border-radius: 50px;
   cursor: pointer;
   background: linear-gradient(to right, $limeGreen, $brightCyan, $limeGreen);
   background-size: 200%;
-  // background-position: 0%;
   border: 0;
   color: $white;
   font-size: $font-sm;
@@ -67,12 +106,11 @@ button, .button {
 
 .button{
   &__cta{
-    opacity: 0.75;
-    // transition: opacity 0.3s ease-in-out;
+    opacity: 1;
     transition: all 0.3s ease-in-out;
     &:hover{
       background-position: 100%;
-      opacity: 1;
+      opacity: 0.75;
     }
   }
 }
