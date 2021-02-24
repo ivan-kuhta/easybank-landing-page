@@ -1,0 +1,1 @@
+# Test layout of the site using HTML, SCSS and JavaScript
